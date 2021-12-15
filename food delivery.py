@@ -44,32 +44,24 @@ class hotels:
             print("Quality resturant \n Ratings - ⭐⭐⭐⭐")
             print("A2B \n Ratings - ⭐⭐⭐⭐")
             #self.hotel_selct = input("Choose a hotel")
-        else:
-            raise ValueError("-NO-HOTELS-FOUND-NEAR-YOU")
             if self.__area == "T Nagar":
                 print("Takkur Briyani \n  Ratings - ⭐⭐⭐⭐")
                 print("Absolute Barbecues T-Nagar \n Ratings - ⭐⭐⭐⭐")
                 print("COAL BARBECUES \n Ratings - ⭐⭐⭐⭐")
                 print("Yamoideen \n Ratings - ⭐⭐⭐⭐⭐")
                 #self.hotel_selct = input("Choose a hotel")
-            else:
-                raise ValueError("-NO-HOTELS-FOUND-NEAR-YOU")
                 if self.__area == "Porur":
                     print("Salem RR Briyani \n  Ratings - ⭐⭐⭐⭐")
                     print("  \n Ratings - ⭐⭐⭐⭐")
                     print("wangs Kitchen \n Ratings - ⭐⭐⭐⭐")
                     print("Cresent \n Ratings - ⭐⭐⭐⭐⭐")
                     #self.hotel_selct = input("Choose a hotel")
-                else:
-                    raise ValueError("-NO-HOTELS-FOUND-NEAR-YOU")
                     if self.__area == "Saidapet":
                         print("The Waterfall Restaurant \n  Ratings - ⭐⭐⭐⭐")
                         print("Vasco's T-Nagar \n Ratings - ⭐⭐⭐⭐")
                         print("The Coffee Place \n Ratings - ⭐⭐⭐⭐")
                         print("The Scallion \n Ratings - ⭐⭐⭐⭐⭐")
                         #self.hotel_selct = input("Choose a hotel")
-                    else:
-                        raise ValueError("-NO-HOTELS-FOUND-NEAR-YOU")
                         if self.__area == "Thiruvanmiyur":
                             print("Writes's caf \n  Ratings - ⭐⭐⭐⭐")
                             print("Madurai Kumar Mess \n Ratings - ⭐⭐⭐⭐")
@@ -78,6 +70,12 @@ class hotels:
                             #self.hotel_selct = input("Choose a hotel")
                         else:
                             raise ValueError("-NO-HOTELS-FOUND-NEAR-YOU")
+                    else:
+                        raise ValueError("-NO-HOTELS-FOUND-NEAR-YOU")
+                else:
+                    raise ValueError("-NO-HOTELS-FOUND-NEAR-YOU")
+            else:
+                raise ValueError("-NO-HOTELS-FOUND-NEAR-YOU")
 class dishes(hotels):
     def __init__(self):
         self.chotel = input("Choose an hotel")
@@ -90,25 +88,23 @@ class dishes(hotels):
             if i == self.chotel:
                 print(self.alldishes)
     def orderstatus(self):
-            self.__orderdetails = input("Please Enter Your Order")
-            for i in self.alldishes:
-                if  k in i.items():
-                        if k == self.__orderdetails:
-                            print(k)
-    def recipt(self):
-        print("order placed succesfully for",self.__uname)
-        print("payment mode : COD")
-        
-    
+            self.__orderdetails = input("Please Enter Your Order \n")
+            for i,j in self.alldishes.items():
+                if  i == self.__orderdetails:
+                    print("Your order is \n",i)
+                    print("price \n",j)
+                    print("order summary \n",)
+                    print("ordered",self.__orderdetails," in ",self.chotel,"price",j)
+            
 
-        
-#customer = login()
-#customer.unum()
-#customer.mailid_verify()
-#customer1=hotels()
-#customer1.selct_area("Avadi","T Nagar","Saidapet","Porur","Thiruvanmiyur")        
-#customer1.selct_hotels()
+customer = login()
+customer.unum()
+customer.mailid_verify()
+customer1=hotels()
+customer1.selct_area("Avadi","T Nagar","Saidapet","Porur","Thiruvanmiyur")        
+customer1.selct_hotels()
 customer2 = dishes()
 customer2.menu()
 customer2.orderstatus()
+customer2.order_summary()
 customer2.recipt()
